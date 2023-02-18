@@ -1,0 +1,48 @@
+.card {
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 1rem;
+}
+.card > img,
+p,
+h3 {
+  width: 70%;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.card > img:hover {
+  margin-bottom: 10px;
+  cursor: pointer;
+  transform: scale(1.08);
+  transition: all ease-in-out 100ms;
+}
+.card > h3 {
+  font-weight: 600;
+  font-size: 16px;
+}
+.card > p {
+  font-size: 14px;
+}
+/* @media only screen and (max-width: 660px) {
+  .card {
+    width: 12rem;
+    padding: 0;
+  }
+} */
+@media only screen and (max-width: 460px) {
+  .card {
+    width: 15rem;
+    padding: 0;
+  }
+  .card > img,
+  p,
+  h3 {
+    width: 100%;
+  }
+}

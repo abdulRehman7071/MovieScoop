@@ -1,0 +1,11 @@
+.popular__container {
+  padding: 2rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  min-height: 100vh;
+}
+@media only screen and (max-width: 660px) {
+  .popular__container {
+  }
+}
