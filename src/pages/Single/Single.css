@@ -53,6 +53,9 @@
 img {
   background-size: cover;
 }
+.overview__content {
+  margin: 10px 0px;
+}
 @media only screen and (max-width: 660px) {
   .single__container {
     flex-direction: column-reverse;
@@ -71,5 +74,25 @@ img {
     width: 95%;
     margin: 0px 0px;
     margin-top: 5px;
+  }
+  .single__details > div > h2 {
+    margin: 0rem;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+  }
+  .details__wrapper > p {
+    font: size 0.8rem !important;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .single__details > div > h2 {
+    font-size: 0.9rem;
+  }
+  .details__wrapper {
+    font-size: 60%;
+  }
+  .poster__container {
+    width: 5rem;
   }
 }

@@ -1,15 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Cards from "../../components/Cards/Cards";
-import SearchMovie from "../../components/SearchMovie/SerachMovie";
+import SearchMovie from "../SearchMovie/SerachMovie";
 import requests from "../../requests";
 import "./Popular.css";
+import { FindMovie } from "../../App";
 
 const Popular = () => {
+  let { searching, setSearching } = useContext(FindMovie);
   useEffect(() => {
     fetchData();
   }, []);
   const [allMovies, setAllMovies] = useState([]);
-  const [searching, setSearching] = useState(true);
+
   const fetchData = async () => {
     const fetchAll = await fetch(requests.fetcAllmovies);
     const res = await fetchAll.json();

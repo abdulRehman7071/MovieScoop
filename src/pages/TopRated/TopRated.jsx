@@ -1,9 +1,10 @@
 import requests from "../../requests";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import "./TopRated.css";
 import Cards from "../../components/Cards/Cards";
-
+import { FindMovie } from "../../App";
 const TopRated = () => {
+  const {} = useContext(FindMovie);
   const [topRated, setTopRated] = useState([]);
   const fetchData = async () => {
     const fetchAll = await fetch(requests.topRatedMovies);

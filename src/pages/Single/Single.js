@@ -60,7 +60,7 @@ const Single = () => {
             </div>
           </div>
           <h2>overview</h2>
-          <p>{singleMovie.overview}</p>
+          <p className="overview__content">{singleMovie.overview}</p>
         </div>
         <div className="single__cover">
           <img
