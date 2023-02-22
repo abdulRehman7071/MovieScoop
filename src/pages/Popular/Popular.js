@@ -1,12 +1,10 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import Cards from "../../components/Cards/Cards";
-import SearchMovie from "../SearchMovie/SerachMovie";
+// import SearchMovie from "../SearchMovie/SerachMovie";
 import requests from "../../requests";
 import "./Popular.css";
-import { FindMovie } from "../../App";
 
 const Popular = () => {
-  let { searching, setSearching } = useContext(FindMovie);
   useEffect(() => {
     fetchData();
   }, []);
@@ -20,25 +18,20 @@ const Popular = () => {
       setAllMovies(data);
     }
   };
-
   return (
-    <>
-      {searching ? (
-        <SearchMovie />
-      ) : (
-        <div className="popular__container">
-          {allMovies.map((item, i) => (
-            <Cards
-              key={i}
-              url={item.poster_path}
-              title={item.title}
-              rating={item.vote_average}
-              id={item.id}
-            />
-          ))}
-        </div>
-      )}
-    </>
-  );
-};
+
+    <div className="popular__container">
+      {allMovies.map((item, i) => (
+        <Cards
+          key={i}
+          url={item.poster_path}
+          title={item.title}
+          rating={item.vote_average}
+          id={item.id}
+        />
+      ))}
+    </div>
+  )
+}
+
 export default Popular;

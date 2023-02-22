@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import { useRef, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { show, hide } from "../../features/toggleNav/index";
 import { FindMovie } from "../../App";
@@ -8,6 +8,7 @@ const Navbar = () => {
   const showNav = useSelector((state) => state.toggleNav.value);
   const navRef = useRef(null);
   let mobile = false;
+  const navigate = useNavigate();
   let {
     searchMovies,
     setSearchMovies,
@@ -52,6 +53,7 @@ const Navbar = () => {
   };
   const handleSearch = (e) => {
     e.preventDefault();
+    navigate("/search");
     searchResult();
   };
   return (
@@ -63,7 +65,7 @@ const Navbar = () => {
           <i className="fa-solid fa-bars" onClick={() => showNavbar()}></i>
         )}
       </div>
-      <div className="header__logo">MovieDb</div>
+      <div className="header__logo">Movies Scoop</div>
       <div className="header__nav">
         <ul ref={navRef}>
           {navLinks.map((link, i) => (
@@ -82,7 +84,9 @@ const Navbar = () => {
             placeholder="Search Movies"
             onChange={(e) => handleChange(e)}
           />
-          <button onClick={(e) => handleSearch(e)}>Search</button>
+          <Link to="/search">
+            <button onClick={(e) => handleSearch(e)}>Search</button>
+          </Link>
         </form>
       </div>
     </header>

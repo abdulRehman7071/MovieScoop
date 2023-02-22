@@ -6,6 +6,7 @@ import Popular from "./pages/Popular/Popular";
 import TopRated from "./pages/TopRated/TopRated";
 import Upcoming from "./pages/Upcoming/Upcoming";
 import Single from "./pages/Single/Single";
+import SearchMovie from './pages/SearchMovie/SerachMovie'
 const FindMovie = createContext();
 export default function App() {
   const [searchMovies, setSearchMovies] = useState("");
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="/top-rated" element={<TopRated />} />
             <Route path="/upcoming" element={<Upcoming />} />
             <Route path="/single/:id" element={<Single />} />
+            <Route path="/search" element={<SearchMovie />} />
           </Routes>
         </div>
       </BrowserRouter>

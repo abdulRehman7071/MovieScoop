@@ -5,6 +5,7 @@ header {
   align-items: center;
   position: relative;
 }
+
 .ham__container {
   position: absolute;
   top: 5px;
@@ -12,40 +13,47 @@ header {
   display: none;
   cursor: pointer;
 }
+
 .fa-solid {
   padding: 0.5rem;
   font-size: 1.5rem;
 }
+
 .header__logo {
   color: #def2f1;
   font-weight: 800;
   font-size: 1.5rem;
   cursor: pointer;
 }
+
 .header__nav {
   display: flex;
   align-items: center;
 }
-.header__nav > ul {
+
+.header__nav>ul {
   display: flex;
   list-style: none;
 }
-.header__nav > ul > a > li {
+
+.header__nav>ul>a>li {
   margin: 0 1rem;
   cursor: pointer;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-.header__nav > form > input {
+.header__nav>form>input {
   padding: 0.5rem;
   margin-right: 5px;
   border-radius: 5px;
   border: none;
 }
-.header__nav > form > button {
+
+.header__nav>form>a>button {
   padding: 0.5rem;
   margin-left: 5px;
   background-color: #17252a;
@@ -55,7 +63,7 @@ a {
 }
 
 @media only screen and (max-width: 660px) {
-  .header__nav > ul {
+  .header__nav>ul {
     flex-direction: column;
     margin: 1rem;
     width: 100%;
@@ -66,18 +74,22 @@ a {
   .ham__container {
     display: block;
   }
+
   .header__nav {
     flex-direction: column;
   }
 }
+
 @media only screen and (max-width: 460px) {
   header {
     flex-direction: column;
   }
+
   .header__logo {
     margin-bottom: 10px;
   }
-  .header__nav > ul > a > li {
+
+  .header__nav>ul>a>li {
     margin: 1rem;
   }
 }
